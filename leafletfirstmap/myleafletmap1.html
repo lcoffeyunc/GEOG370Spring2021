@@ -25,41 +25,32 @@
     <script>
         var map = L.map('mapid').setView([35.91, -79.05], 17);
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {}).addTo(map);
+        L.marker([35.909176, -79.047037]).addTo(map)
+             .bindPopup("Fetzer Gymnasium, Located on South Campus")
+             .openPopup();
+        L.marker([35.90973, -79.054339]).addTo(map)
+             .bindPopup("Carolina Inn, Located on West Campus")
+             .openPopup();
         L.marker([35.909384, -79.049665]).addTo(map)
              .bindPopup("Louis Round Wilson Library, Located on the Quad")
              .openPopup();
-        
-        // L.geoJSON(uncwell).addTo(map)
-
-        var uncIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties
-        iconUrl: 'https://faopharmacy.unc.edu/files/2018/04/Old-Well-Icon-Example.png',
-        // this points to a jpg image obtained from the internet
-        iconSize: [50,50], // size of the icon
-        popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
-        });
-
-        var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>";
-
-        L.geoJSON(uncwell, { // a
-        pointToLayer: function (feature, latlng) { // b
-        return L.marker(latlng, {icon: uncIcon});}}) // c
-        .bindPopup(customPopup) // d
-        .addTo(map); //
-
-    </script>
-
-    
-    <div id="mapid"></div>
-    <style>
-        #mapid{ width: 900px; height: 500px;}
-    </style>
-
-<script>
-        
-
+      
             var libIcon = L.icon({
-
             iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Closed_Book_Icon.svg',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+            });
+
+            var PopupI = "Louis Round Wilson Library, Located on the Quad<br/><img src='https://upload.wikimedia.org/wikipedia/commons/5/50/Closed_Book_Icon.svg'width='100px'/>";
+
+            var innIcon = L.icon({
+            iconUrl: 'https://simple.wikipedia.org/wiki/Pillow#/media/File:White-pillows.jpg',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+            });
+
+            var gymIcon = L.icon({
+            iconUrl: 'https://en.wikipedia.org/wiki/File:Dumbbell-incline-bench-press-1.png',
             iconSize: [50,50],
             popupAnchor: [0,0]
             });
@@ -70,12 +61,35 @@
                 .bindPopup(wilsonlib)
              .openPopup();
 
-             L.geoJSON(wilsonlib, { // a
-                pointToLayer: function (feature, latlng) { // b
-             return L.marker(latlng, {icon: libIcon});}}) //c
-             .bindPopup("Wilson Library, Located on the Quad")
-             .bindPopup(wilsonlib)
-                .addTo(map); //
+             var customPopup = "Carolina Inn, Located on West Campus"
+            L.marker([35.90973, -79.054339], {icon:libIcon}).addTo(map)
+            .bindPopup("Carolina Inn, Located on West Campus")
+            .bindPopup(innIcon)
+            .openPopup();
+
+            var customPopup = "Fetzer Gymnasium, Located on South Campus"
+            L.marker([35.909176, -79.047037], {icon:gymIcon}).addTo(map)
+                 .bindPopup("Fetzer Gym, Locted on South Campus")
+                .bindPopup(gymIcon)
+             .openPopup();
+
+
+            L.geoJSON(wilsonlib, { // a
+            pointToLayer: function (feature, latlng) { // b
+            return L.marker(latlng, {icon: libIcon});}}) //c
+            .bindPopup("Wilson Library, Located on the Quad")
+            .bindPopup(wilsonlib)
+            .addTo(map); //
+
+            L.geoJSON(carolinainn, { // a
+            pointToLayer: function (feature, latlng) { // b
+            return L.marker(latlng, {icon: innIcon});}}) //c
+            .bindPopup("Carolina Inn, Located on West Campus")
+            .bindPopup(carolinainn)
+            .addTo(map); //
+
+
+            
         
 
 
@@ -103,6 +117,12 @@
          .bindPopup(carolinainn)
          .addTo(map); //
     
+         L.geoJSON(fetzergym, { // a
+         pointToLayer: function (feature, latlng) { // b
+         return L.marker(latlng, {icon: gymIcon});}}) //c
+         .bindPopup("Fetzer Gymnasium, Located on South Campus")
+         .bindPopup(gymIcon)
+         .addTo(map); //
 
         
  L.marker([35.909176, -79.047037]).addTo(map)
