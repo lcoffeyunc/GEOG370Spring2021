@@ -1,0 +1,23 @@
+var wilsonlib = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "Wilson Library" }, "geometry": { "type": "Point", "coordinates": [ -79.049665, 35.909384 ] } }
+]
+}
+
+var carolinainn = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "Carolina Inn" }, "geometry": { "type": "Point", "coordinates": [ -79.054339, 35.90973 ] } }
+]
+}
+
+var fetzergym = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "Fetzer Gymnasium" }, "geometry": { "type": "Point", "coordinates": [ -79.047037, 35.909176 ] } }
+]
+}
