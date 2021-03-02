@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title> My First Map</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script src='/leaflet/data/hboro.geojson'></script>
+   <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900 px; height: 500px;}
+    </style>
+    <script>
+        var map = L.map('mapid').setView([36.076663, -79.093372], 15);
+
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{
+        }).addTo(map);
+
+
+        L.marker ([36.07663, -79.093372]).addTo(map)
+            .bindPopup("Cameron Park Elementary School, no recent changes but school will be renamed due to the ties to slavery of the Cameron family")
+            .openPopup();
+            
+            var IconII = L.icon({
+            iconUrl: 'https://iconscout.com/icon/court-142',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+
+
+
+
+        L.marker ([36.073881, -79.099067]).addTo(map)
+            .bindPopup("Orange County Court House, no outwards changes, but a 14th floor revovation is occuring")
+            .openPopup();
+            var PopupII = "Orange County Court House<br/><img src='https://upload.wikimedia.org/wikipedia/commons/e/e1/Former_Orange_County_Courthouse%2C_Hillsborough%2C_NC.jpg' width= 100px'/>"
+
+        var CourthouseMarker = L.marker([36.073881, -79.099067], {icon:IconII}, {PopupII}).addTo(map)
+            .bindPopup(PopupII)
+            //.openPopup();
+        
+
+
+
+        L.marker ([36.082286, -79.0907]).addTo(map)
+            .bindPopup("Corbinton Residential Community, has greatly expanded and paved roads, addition of more houses circling out from the center of the community")
+            .openPopup();
+            var IconIII = L.icon({
+            iconUrl: 'https://www.freepik.com/premium-vector/house-building-vector-icon-illustration_6251175.htm',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        var PopupIII = "Corbinton Residential Community<br/><img src='https://images.55places.com/5QdHrQJLfuOhSjoMmqRFCi8TOhY=/800x480/nhds-areaphotos/original/4ced795a4eef30d902f0e9ea6d227176.jpg' width= 100px'/>"
+
+        var CommunityMarker = L.marker([36.082286, -79.0907], {icon:IconIII}).addTo(map)
+            .bindPopup(PopupIII)
+            //.openPopup();
+
+        var IconI = L.icon({
+            iconUrl: 'https://www.vectorstock.com/royalty-free-vector/school-icon-simple-element-from-school-icons-vector-27723549',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        
+
+        var PopupI = "Cameron Park Elementary School<br/><img src='https://foursquare.com/v/cameron-park-elementary-school/4bce2a6cb6c49c741db09691?openPhotoId=4f993079e4b0519aba228186' width= 100px'/>"
+
+        L.marker([36.07663, -79.093372], {icon:IconI}, {PopupI}).addTo(map)
+            .bindPopup(PopupI)
+            //.openPopup();
+
+        L.geoJSON(campark), { // a
+        pointToLayer: function (feature, latlang) { // b
+        return L.marker(latlang, {icon: IconI});}} // c
+        .bindPopup(PopupI) // d
+        .addTo(map); //
+
+
+        L.marker ([36.07663, -79.093372]).addTo(map)
+            .bindPopup("Cameron Park Elementary School, no recent changes but school will be renamed due to the ties to slavery of the Cameron family")
+            .openPopup();
+
+        var IconI = L.icon({
+            iconUrl: 'https://www.vectorstock.com/royalty-free-vector/school-icon-simple-element-from-school-icons-vector-27723549',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+            
+        });
+
+        var PopupI = "Cameron Park Elementary School<br/><img src='https://foursquare.com/v/cameron-park-elementary-school/4bce2a6cb6c49c741db09691?openPhotoId=4f993079e4b0519aba228186' width= 100px'/>"
+
+        var CamMarker = L.marker([36.07663, -79.093372], {icon:IconI}).addTo(map)
+            .bindPopup(PopupI);
+            //.openPopup();
+
+        L.geoJSON(campark), { // a
+        pointToLayer: function (feature, latlang) { // b
+        return L.marker(latlang, {icon: IconI});}} // c
+        .bindPopup(PopupI) // d
+        .addTo(map); //
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        L.marker ([36.073881, -79.099067]).addTo(map)
+            .bindPopup("Orange County Court House, no outwards changes, but a 14th floor revovation is occuring")
+            .openPopup();
+
+        var IconII = L.icon({
+            iconUrl: 'https://iconscout.com/icon/court-142',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        var PopupII = "Orange County Court House<br/><img src='https://upload.wikimedia.org/wikipedia/commons/e/e1/Former_Orange_County_Courthouse%2C_Hillsborough%2C_NC.jpg' width= 100px'/>"
+
+        var CourthouseMarker = L.marker([36.073881, -79.099067], {icon:IconII}, {PopupII}).addTo(map)
+            .bindPopup(PopupII)
+            //.openPopup();
+
+        L.geoJSON(courthouse), { // a
+        pointToLayer: function (feature, latlang) { // b
+        return L.marker(latlang, {icon: IconI});}} // c
+        .bindPopup(PopupII) // d
+        .addTo(map); //
+
+
+
+
+
+
+
+
+
+        L.marker ([36.082286, -79.0907]).addTo(map)
+            .bindPopup("Corbinton Residential Community, has greatly expanded and paved roads, addition of more houses circling out from the center of the community")
+            .openPopup();
+
+        var IconIII = L.icon({
+            iconUrl: 'https://www.freepik.com/premium-vector/house-building-vector-icon-illustration_6251175.htm',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        var PopupIII = "Corbinton Residential Community<br/><img src='https://images.55places.com/5QdHrQJLfuOhSjoMmqRFCi8TOhY=/800x480/nhds-areaphotos/original/4ced795a4eef30d902f0e9ea6d227176.jpg' width= 100px'/>"
+
+        var CommunityMarker = L.marker([36.082286, -79.0907], {icon:IconIII}).addTo(map)
+            .bindPopup(PopupIII)
+            //.openPopup();
+
+        L.geoJSON(community), { // a
+        pointToLayer: function (feature, latlang) { // b
+        return L.marker(latlang, {icon: IconIII});}} // c
+        .bindPopup(PopupIII) // d
+        .addTo(map); //
+
+        var Vectors = {
+            "Cameron Park Elementary":CamMarker,
+            "Orange County Courthouse":CourthouseMarker,
+            "Corbinton Residential Community":CommunityMarker
+        };
+
+        L.control.layers(Tiles, Vectors).addTo(map);
+        
+    </script>
+
+
+
+</script>
+
