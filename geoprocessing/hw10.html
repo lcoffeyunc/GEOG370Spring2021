@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Homework 10: Geoprocessing Analysis </h1>
+    <h2>Lauren Coffey</h2>
+    <h3>I wanted to assess the areas of Durham that had historic districts. I have studied historical preservation and think the differences between local and national historic districts are very interesting, so I made a map investigating the question of what areas of Durham have historic districts and are there overlaps in national and local districts. To answer the first part, I used the geoprocessing tool of intersection to see which areas were both national and local historic districts, these are shown on the map as highlighted in green below. I think it shows a very interesting answer to the question of what areas overlap, because as illustrated, there is only one area that is a uniform overlap and many places within a local or historic district may also be places carved out to be considered as both, creating unique boarders on the intersections. Many of these overlapping areas are in central and north Durham, with is the most historic overall, and the multiple overlaps show that the region has historical significance for both the city and national history. For the second part of my question, I then used the geoprocessing tool of symmetrical differences to create a new layer that included the areas that are either national or local districts, but not both. This helped to give a broad overview of which areas of Durham are historic in some way.  </h3>
+
+    <!-- a png image of your map will be embedded using the lines below  -->
+    <a href="./Hw10_map.png"> 
+        <img src="./Hw10_map.png" alt="Historic Districts in the City of Durham" width='500px'>
+        </a>
+
+    <!-- here you will link your data sources -->
+    <h2>Data used for this project</h2>
+    <a href="./intersection_historical.geojson">Both Local and National Historic Districts</a>
+    <p></p>
+    <a href="./symdif_historical.geojson">Historical District (either local or national) </a>
+    <p></p>
+    <a href="https://live-durhamnc.opendata.arcgis.com/datasets/local-historic-districts-1?geometry=-79.002%2C35.973%2C-78.822%2C36.021">Link to source of local historic districts data at Open Data for City and County of Durham</a>
+    <p></p>
+    <a href="https://live-durhamnc.opendata.arcgis.com/datasets/national-historic-districts-1?geometry=-79.280%2C35.951%2C-78.559%2C36.146">Link to source of national historic districts data at Open Data for City and County of Durham</a>
+
+</body>
+</html>
